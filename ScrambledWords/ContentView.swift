@@ -29,13 +29,15 @@ struct ContentView: View {
                                                              Letter(id: 2, text: "E"),
                                                              Letter(id: 3, text: "R"),
                                                              Letter(id: 4, text: "N"),
-                                                             Letter(id: 5, text: "G"),], answer: "ORANGE"),
+                                                             Letter(id: 4, text: "G"),
+                                                            ], answer: "ORANGE"),
         QuestionModel(image: "banana", scrambledletters: [   Letter(id: 0, text: "A"),
                                                              Letter(id: 1, text: "A"),
                                                              Letter(id: 2, text: "N"),
                                                              Letter(id: 3, text: "B"),
                                                              Letter(id: 4, text: "N"),
-                                                             Letter(id: 5, text: "A"),], answer: "BANANA"),
+                                                             Letter(id: 4, text: "A"),
+                                                             ], answer: "BANANA"),
         QuestionModel(image: "apple", scrambledletters: [   Letter(id: 0, text: "P"),
                                                             Letter(id: 1, text: "A"),
                                                             Letter(id: 2, text: "P"),
@@ -116,15 +118,29 @@ index,
                                                 score = score + 1
                                                 DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
                                                     showSuccess = false
+                                                    if currentQuestionIndex == questions.count - 1 {
+                                                        
+                                                    } else {
+                                                        currentQuestionIndex = currentQuestionIndex + 1
+                                                    }
+                                                   
                                                 })
                                             } else {
                                                 showFailure = true
                                                 score = score - 1
                                                 DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
                                                     showFailure = false
+                                                    if currentQuestionIndex == questions.count - 1 {
+                                                        
+                                                    } else {
+                                                        currentQuestionIndex = currentQuestionIndex + 1
+                                                        
+                                                    }
+                                                    
                                                 })
                                                    
                                             }
+                                            guessedLetters.removeAll()
                                         }
                                     }
                                 }
