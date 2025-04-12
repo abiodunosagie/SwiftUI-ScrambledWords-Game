@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct GameView: View {
     // MARK: - PROPERTIES
 //    @State var letters: [Letter] = [
 //        Letter(id: 0, text: "A"),
@@ -173,19 +173,9 @@ index,
 
 // MARK: - PREVIEW
 #Preview {
-    ContentView()
+    GameView()
 }
 
 
 // MARK: - COMPONENTS
-struct LetterView: View {
-    let letter: Letter
-    var body: some View {
-        Text(letter.text)
-            .font(.system(size: 15, weight: .semibold))
-            .foregroundStyle(.white)
-            .frame(width: 30,height: 30)
-            .background(.white.opacity(0.4))
-            .clipShape(RoundedRectangle(cornerRadius: 4))
-    }
-}
+
