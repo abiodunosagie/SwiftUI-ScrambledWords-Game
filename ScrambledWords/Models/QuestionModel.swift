@@ -6,3 +6,9 @@
 //
 
 import Foundation
+
+struct QuestionModel {
+    let image: String
+     var scrambledletters: [Letter]
+    let answer: String
+}
